@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      target: runner
+    volumes:
+      - ./uploads:/app/uploads
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
